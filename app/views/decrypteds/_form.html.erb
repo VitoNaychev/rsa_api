@@ -1,0 +1,22 @@
+<%= form_with(model: decrypted, local: true) do |form| %>
+  <% if decrypted.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(decrypted.errors.count, "error") %> prohibited this decrypted from being saved:</h2>
+
+      <ul>
+      <% decrypted.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message, id: :decrypted_message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module DecryptedsHelper
+end

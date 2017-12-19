@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Decrypteds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @decrypteds.each do |decrypted| %>
+      <tr>
+        <td><%= decrypted.message %></td>
+        <td><%= link_to 'Show', decrypted %></td>
+        <td><%= link_to 'Edit', edit_decrypted_path(decrypted) %></td>
+        <td><%= link_to 'Destroy', decrypted, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Decrypted', new_decrypted_path %>

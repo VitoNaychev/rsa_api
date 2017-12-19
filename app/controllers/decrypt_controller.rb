@@ -16,6 +16,7 @@ class DecryptController < ApplicationController
 
         decr = RSA.new key.n, key.e, key.d
         decrypted = decr.decrypt message
+        Decrypted.create(:message => decrypted)
 
         render plain: decrypted
     end
