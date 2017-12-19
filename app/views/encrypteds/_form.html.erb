@@ -1,0 +1,22 @@
+<%= form_with(model: encrypted, local: true) do |form| %>
+  <% if encrypted.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(encrypted.errors.count, "error") %> prohibited this encrypted from being saved:</h2>
+
+      <ul>
+      <% encrypted.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :message %>
+    <%= form.text_field :message, id: :encrypted_message %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

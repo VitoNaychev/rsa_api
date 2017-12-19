@@ -1,0 +1,2 @@
+module EncryptedsHelper
+end
