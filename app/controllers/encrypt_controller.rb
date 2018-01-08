@@ -18,7 +18,9 @@ class EncryptController < ApplicationController
         encrypted = encr.encrypt message
         encr_id = Encrypted.create(:message => encrypted).id
         
-        render plain: encr_id
+        response = {"id" => encr_id}
+        
+        render json: response
     end
 
     def get_message

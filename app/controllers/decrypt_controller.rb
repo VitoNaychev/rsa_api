@@ -18,6 +18,8 @@ class DecryptController < ApplicationController
         decrypted = decr.decrypt message
         Decrypted.create(:message => decrypted)
 
-        render plain: decrypted
+        response = {"message" => decrypted}
+        
+        render json: response
     end
 end

@@ -15,8 +15,10 @@ class CreateKeyController < ApplicationController
         else
             id = Key.create(:n => n_recv, :e => e_recv, :d => d_recv).id
         end
+       
+        response = {"id" => id}
         
-        render plain: id
+        render json: response
     end
 
     def get_key
